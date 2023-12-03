@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import MyClassComponent from './components/1-ques/ClassBasedComponent'
+import FunctionComponent from './components/2-ques/Function';
 
+import MyComponent from './components/3-ques/Component';
+import MyPureComponent from './components/3-ques/PureComponent'
+import UseMemoExample from './components/4-ques/UseMemo';
+
+import Memoization from './components/20-ques/Memoization';
+import ParentComponent from './components/9-ques/ParentComponent';
+import ReduceExample from './components/14-ques/Reduse';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <MyClassComponent /> */}
+      {/* <FunctionComponent /> */}
+
+      {/* <MyComponent />
+      <MyPureComponent />
+
+      <UseMemoExample />
+
+      <Memoization /> */}
+      {/* <ParentComponent /> */}
+      <ReduceExample />
     </div>
-  );
+  )
 }
 
 export default App;

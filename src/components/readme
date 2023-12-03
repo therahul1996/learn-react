@@ -1,0 +1,247 @@
+**1. Different between class component and class based component**
+"class component" and a "class-based component" typically refer to the same thing. Both terms describe a type of component structure used in class-based approaches in React before the introduction of functional components with hooks. They are defined as JavaScript classes that extend the React.Component class. They can have state managed using this.state and update it using this.setState(). Class components have a more complex syntax and lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount are used to manage side effects and state changes.
+
+I. componentDidMount: This method is called after a component is rendered for the first time. It's used for initialization tasks, like fetching data from an API or setting up event listeners.
+
+II. componentDidUpdate: This method is triggered when a component's state or props change and it re-renders. It's useful for handling updates or side effects after a render, like updating the DOM or making additional API calls.
+
+III. componentWillUnmount: This method is invoked just before a component is removed from the DOM. It's used for cleanup tasks such as removing event listeners, cancelling network requests, or clearing timers to prevent memory leaks.
+
+
+**2. Functional components**
+Functional component is a JavaScript function that takes props as an argument and returns a React element. They are simpler and more lightweight than class components and are typically used for rendering UI and managing state using hooks. Functional components have become the preferred way of building components in React due to their readability and maintainability.
+
+
+**3. component and Pure component**
+
+I. Component:
+- A React component that extends the React.Component class.
+- Re-renders whenever its parent re-renders, regardless of whether its props or state have changed.
+- Useful when you want to manage when the component should update manually.
+- Can have performance implications if not used carefully.
+
+II. PureComponent:
+- A React component that extends the React.PureComponent class.
+- Performs a shallow comparison of props and state to determine whether to re-render.
+- Automatically optimizes re-rendering by preventing unnecessary updates.
+- Useful when you want to avoid unnecessary re-renders for performance reasons.
+
+
+**4. What is useMemo when to use it**
+useMemo is a React hook that is used to optimize the performance of functional components by memoizing the result 
+of a function or an expression. It allows you to cache the computed value of a function so that it is only recalculated 
+when its dependencies change. This can help reduce unnecessary re-computations and re-renders 
+in your component.
+
+**5. Unknown event in functional component**
+In React functional components, there's no such thing as an "unknown event." React components use well-defined 
+events that correspond to HTML events. If you're encountering an issue related to events in a functional component, 
+it might be due to a typo, missing import, or some other issue that's causing the event to not be recognized properly.
+
+**6. Prop DRELLING method in react**
+Prop Drilling is a term used in React to describe a situation where props are passed down through multiple layers 
+of components in a component tree to reach a deeply nested component that needs access to those props. 
+This can lead to code that is harder to maintain and understand, as well as potential performance issues.
+
+
+**7. CONTEXT API**
+The React Context API allows you to manage and share state between components without prop drilling. It provides a 
+way to create global state that can be accessed by components at any level in the component tree.
+
+
+**8. control and uncontrol component**
+I. Controlled Components:
+A controlled component is a form element whose value is controlled by React's state. This means that the 
+component's value is stored in the state, and any changes to the component are reflected in the state and vice 
+versa. This approach gives you full control over the form element's behavior and allows you to validate and 
+manipulate its value before rendering.
+
+II. Uncontrolled Components:
+An uncontrolled component is a form element whose value is handled by the DOM itself. In this case, React doesn't 
+control the value directly; instead, you rely on DOM events to read the value when needed. Uncontrolled components 
+are useful when you want to integrate React with non-React code or need to avoid unnecessary re-renders.
+
+
+**9. Parent component n child component**
+
+I. Parent Component:
+In React, a parent component is a component that renders other components within it. It's responsible for managing the 
+state and passing down data and props to its child components. Parent components are often higher-level components that 
+provide structure and logic to the application.
+
+II. Child Component:
+A child component in React is a component that's rendered within another component (the parent component). Child 
+components receive data and functionality from their parent through props. They're often used to break down complex 
+UIs into smaller, reusable pieces, making the code more organized and maintainable.
+
+
+**10. higher-order component**
+A higher-order component is a design pattern used to enhance or modify the behavior of a component by wrapping it 
+with another component. HOCs are not specific to parent-child relationships but are a way to reuse component logic 
+across different components.
+
+
+**11. Event bubbling** **Not Completed**
+Event bubbling is a concept in React where when an event is triggered on a nested or child element, the event is 
+first handled by that element's event handler, and then it "bubbles up" to the parent elements, triggering their 
+event handlers as well. In React, events work similarly to how they work in the DOM, and the concept of event bubbling 
+applies.
+
+
+**12. Deep copy n shallow copy difference** **Not Completed**
+
+I. Shallow Copy:
+A shallow copy creates a new object or array, but the inner elements of the new object still reference the same 
+elements as the original. In other words, the top-level structure is copied, but the nested structures are shared 
+between the original and the copied object.
+
+II. Deep Copy:
+A deep copy creates an entirely new object or array and recursively copies all nested elements, so they are 
+independent of the original object's elements. Deep copies ensure that changes made to the copied object don't 
+affect the original object.
+
+Deep copy is more complex to implement, and in React, you might use libraries like Lodash's cloneDeep or the 
+JSON.parse(JSON.stringify()) method for deep copying.
+
+
+**13. Call apply n bind** **Not Completed**
+
+I. call:
+The call method allows you to invoke a function with a specific this context and arguments provided individually.
+
+II. apply:
+The apply method is similar to call, but it allows you to pass arguments as an array.
+
+III. bind:
+The bind method creates a new function with a fixed this context and optionally some initial arguments. 
+It's often used to create functions that can be passed around without losing their context.
+
+
+**14. Map reduce filter** **Not Completed**
+I. map:
+The map method is used to create a new array by applying a function to each element of the original array.
+
+II. filter:
+The filter method is used to create a new array containing elements that satisfy a certain condition.
+
+III. reduce:
+The reduce method is used to accumulate values from an array into a single value. It takes a function that performs 
+the reduction and an initial value.
+
+
+**15. closures** **Not Completed**
+In React, closures can be seen in situations where functions are defined within other functions, such as event 
+handlers and callbacks. When a function is defined within another function, it forms a closure, which means it 
+retains access to the variables of its parent function even after the parent function has completed execution.
+
+**16. useCallback** **Not Completed**
+In React, the useCallback hook is used to memoize functions and prevent unnecessary re-renders of child components. It's particularly useful when passing functions as props to child components to avoid creating new function instances on every render. This can help improve performance in certain scenarios.
+
+**17. Promises and async await** **Not Completed**
+
+I.Promises:
+Promises are a way to handle asynchronous operations and provide a structured approach to managing callbacks. They have three states: pending, resolved (fulfilled), and rejected.
+
+II.Async/Await:
+async/await is a more modern and readable way to work with promises. It allows you to write asynchronous code that looks like synchronous code, making it easier to follow the flow of the program.
+
+
+**18. Syncronase**
+Synchronous operations in React are typically related to rendering and updating the user interface. React components render synchronously by default, meaning that when the state or props of a component change, the component will re-render synchronously to reflect those changes.
+
+
+**19. what is event loop** **Not Completed**
+The event loop is responsible for handling events, such as user interactions (e.g., clicks, keypresses), network requests, timers, and other asynchronous tasks. It ensures that these events are processed in a non-blocking manner, preventing the application from freezing while waiting for long-running operations to complete.
+
+
+**20. Memoization** **Not Completed**
+Memoization is a technique used to optimize the performance of functions by caching their results. In React, memoization can be particularly useful when working with components that have expensive calculations or rendering processes. React provides a built-in useMemo hook for this purpose.
+
+**21. Object Oreinted Proramming Concept**
+Object-oriented programming (OOP) is a programming paradigm that is based on the concept of objects. In OOP, an object is a self-contained unit that represents a real-world entity or concept. Objects can have attributes (data) and methods (functions) that operate on the data. React, a popular JavaScript library for building user interfaces, can be used to illustrate OOP concepts.
+
+I. Classes and Objects:
+In React, you define components as classes or functions that return JSX elements. These components are essentially objects.
+
+II.Encapsulation:
+Encapsulation is the concept of bundling data and methods that operate on that data into a single unit (object).
+React components encapsulate both the UI elements (JSX) and the logic (methods) within a single component class.
+
+III.Inheritance:
+Inheritance allows you to create a new class that inherits properties and methods from an existing class.
+In React, you can create reusable components by extending existing components.
+
+IV.Polymorphism:
+Polymorphism allows different objects to respond to the same method call in their own way.
+In React, different components can implement the same lifecycle methods differently.
+
+V.Abstraction:
+Abstraction is the concept of hiding complex implementation details and showing only the necessary features of an object.
+React components abstract away the DOM manipulation by providing a declarative way to describe the UI.
+
+**22. Callback function**
+A callback function is a function that is passed as a prop to a child component and is typically used to allow the child component to communicate with its parent component. Callback functions are a common pattern for handling events or passing data between components.
+
+**23. Version Codes**
+React itself doesn't have a version code, but rather, it's a library with its own version that you install using 
+npm or yarn. When you create a new React application using create-react-app or set up a project with React manually, 
+the version of React is determined by the version specified in your package.json file. Here's an example of what 
+the dependencies section of your package.json might look like for React:
+
+****************JavaScript*********************
+Javscript Question
+**************************************
+**2-1. Datatypes in javascript**
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+**2-2. Object Datatype in javascript**
+1. An object
+2. An array
+3. A date
+
+**2-3. What is hoisting**
+Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution.
+
+**2-4. Difference between var let and const**
+var declarations are globally scoped or function scoped while let and const are block scoped. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+
+**2-5. difference between == and === in javascript**
+The == operator performs a loose equality comparison that performs type coercion if necessary to make the comparison possible. The === operator, on the other hand, performs a strict equality comparison that does not perform type coercion and requires the operands to have the same type
+
+**2-6. ES6 Features**
+The let keyword
+The const keyword
+Arrow Functions
+The ... Operator
+For/of
+Map Objects
+Set Objects
+Classes
+Promises
+Symbol
+Default Parameters
+Function Rest Parameter
+String.includes()
+String.startsWith()
+String.endsWith()
+Array.from()
+Array keys()
+Array find()
+Array findIndex()
+New Math Methods
+New Number Properties
+New Number Methods
+New Global Methods
+Object entries
+JavaScript Modules
+
+
+**2-6. predefine sorting function in javascript**
+In JavaScript, you can create a predefined sorting function using the Array.prototype.sort() method. This method allows you to sort the elements of an array based on a custom sorting function that you provide as an argument.
