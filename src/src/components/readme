@@ -53,9 +53,9 @@
 
 
 // **5. Unknown event in functional component**
-// In React functional components, there's no such thing as an "unknown event." React components use well-defined 
-// events that correspond to HTML events. If you're encountering an issue related to events in a functional component, 
-// it might be due to a typo, missing import, or some other issue that's causing the event to not be recognized properly.
+// In React functional components, an "unknown event" might refer to a situation where you are handling an event, but you are not 
+// sure about the specific type of event that will be triggered. This can happen when you use a generic event handler that accepts 
+// any type of event.
 
 
 // **6. Prop DRELLING method in react**

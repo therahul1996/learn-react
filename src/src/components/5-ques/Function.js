@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function ButtonCounter() {
-  const [count, setCount] = useState(0);
+const MyComponent = () => {
+  const handleUnknownEvent = (event) => {
+    // You can access common properties of the event
+    const eventType = event.type;
+    const targetValue = event.target.value;
 
-  const handleButtonClick = () => {
-    setCount(count + 1);
+    // Handle the event based on its type or other properties
+    console.log(`Received unknown event of type: ${eventType}`);
+    console.log(`Target value: ${targetValue}`);
+
+    // Add your custom logic here based on the event type or other properties
   };
 
   return (
     <div>
-      <p>Button has been clicked {count} times.</p>
-      <button onClick={handleButtonClick}>Click Me</button>
+      <input type="text" onChange={handleUnknownEvent} />
+      <button onClick={handleUnknownEvent}>Click me</button>
     </div>
   );
-}
+};
 
-export default ButtonCounter;
+export default MyComponent;
